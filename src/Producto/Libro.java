@@ -1,19 +1,19 @@
 package Producto;
 
 public class Libro {
-
    private String nombre;
    private String autor;
    private int paginas;
    private double precio;
-   private double iva;
+   private double iva = 0.19;
+
 
    public Libro(String nombre, String autor, int paginas, double precio){
       this.nombre = nombre;
       this.autor = autor;
       setPaginas(paginas);
       setPrecio(precio);
-      this.iva = 0.19;
+
    }
 
 
@@ -55,17 +55,7 @@ public double calcularTotal(){
       return precio+(precio*iva);
 }
 
-   public void factura(){
-      System.out.println("Nombre del Libro " +nombre);
-      System.out.println("Autor:  " +autor);
-      System.out.println("Paginas:  " +paginas);
 
-
-   }
-
-   public void almacenarLibro(){
-      System.out.println("Libro almacenado a la Biblioteca Digital");
-   }
 
 
 
