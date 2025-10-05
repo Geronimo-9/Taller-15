@@ -27,6 +27,10 @@ public class Producto {
         return precio;
     }
 
+    public int getCantidad() {
+        return cantidad;
+    }
+
     public String getReferencia() {
         return referencia;
     }
@@ -52,17 +56,9 @@ public class Producto {
 
 
 
-    public void generarFactura(){
-        System.out.println("Nombre del producto: "+nombre);
-        System.out.println("Ref: "+referencia);
-        System.out.println("Precio: "+precio);
-        System.out.println("Cantidad : "+cantidad);
-        System.out.println("Total: "+calcularTotal());
-    }
 
-    public void almacenarProducto(){
-        System.out.println("El producto se ha almacenado con exito");
-    }
+
+
 
 
 

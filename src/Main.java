@@ -2,6 +2,9 @@ import Productos.Libro;
 import Productos.Producto;
 import SRP_Libro.AlmacenarLibro;
 import SRP_Libro.Facturas;
+import SRP_Producto.AlmacenarProducto;
+import SRP_Producto.Etiqueta;
+import SRP_Producto.FacturaProducto;
 
 public class Main {
     public static void main(String[] args) {
@@ -26,19 +29,37 @@ public class Main {
         Producto acondicionador1 = new Producto("Pantene","P021", 2, 15000);
 
 
-
-        //testeando la logica interna del negocio para asegurar su buen funcionamiento.
-        System.out.println(shampoo1.calcularTotal());
-        System.out.println(acondicionador1.calcularTotal());
+        //Tres responsabilidades: Etiquetas, GenerarFacturas y Almacenamiento en Bodega (Inventario).
 
 
+        // Nueva implementacion al ejercicio, con codigo de barra simulado al ejemplo de Pantene.
+        Etiqueta etiqueta1 = new Etiqueta(shampoo1, "75004351600113");
+        Etiqueta etiqueta2 = new Etiqueta(acondicionador1,"75004351600219");
+
+        FacturaProducto factura1 = new FacturaProducto(shampoo1);
+        FacturaProducto factura2 = new FacturaProducto(acondicionador1);
+
+        AlmacenarProducto bodega1 = new AlmacenarProducto(shampoo1);
+        AlmacenarProducto bodega2 = new AlmacenarProducto(acondicionador1);
 
 
-        shampoo1.generarFactura();
-        shampoo1.almacenarProducto();
 
-        acondicionador1.generarFactura();
-        acondicionador1.almacenarProducto();
+
+        etiqueta1.generarEtiqueta();
+        factura1.generarFactura();
+        bodega1.GuardarMercancia();
+
+        etiqueta2.generarEtiqueta();
+        factura2.generarFactura();
+        bodega2.GuardarMercancia();
+
+
+
+
+
+
+
+
 
 
 
