@@ -1,6 +1,6 @@
 package SRP_Libro;
 
-import Producto.Libro;
+import Productos.Libro;
 
 //Almacenara el libro a la base de dato de la libreria
 public class AlmacenarLibro {

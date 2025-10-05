@@ -1,6 +1,6 @@
 package SRP_Libro;
 
-import Producto.Libro;
+import Productos.Libro;
 
 
 //Generará una factura del libro comprado de la libreria

@@ -1,4 +1,4 @@
-package Producto;
+package Productos;
 
 public class Libro {
    private String nombre;
