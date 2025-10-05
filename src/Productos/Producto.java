@@ -56,6 +56,7 @@ public class Producto {
         System.out.println("Nombre del producto: "+nombre);
         System.out.println("Ref: "+referencia);
         System.out.println("Precio: "+precio);
+        System.out.println("Cantidad : "+cantidad);
         System.out.println("Total: "+calcularTotal());
     }
 
