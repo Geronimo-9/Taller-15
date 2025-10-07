@@ -1,3 +1,6 @@
+import IniciarSeccion.Autenticacion.AutenticarUsuario;
+import IniciarSeccion.Autenticacion.Validacion;
+import IniciarSeccion.Usuario;
 import Productos.Libro;
 import Productos.Producto;
 import SRP_Libro.AlmacenarLibro;
@@ -6,8 +9,17 @@ import SRP_Producto.AlmacenarProducto;
 import SRP_Producto.Etiqueta;
 import SRP_Producto.FacturaProducto;
 
+import java.util.Scanner;
+
+
 public class Main {
     public static void main(String[] args) {
+
+
+        Scanner teclado = new Scanner(System.in); //Herrameinta para el ejercicio 3
+
+
+
 
         //Ejercicio 1, Aplicando Responsabilidad Unica, organizando el diseño del software con buenas prácticas
         Libro l1 = new Libro("Mi luna de miel","Geronimo",900,35000);
@@ -55,6 +67,33 @@ public class Main {
 
 
 
+
+    // Ejercicio 3, Inicio de seccion (autenticacion de usuario y validacion)
+
+        System.out.println("Bienvenido a Sima Unicartagena");
+
+        System.out.println("Usuario");
+        String nombre = teclado.nextLine();
+
+        System.out.println("Contraseña");
+        String contraseña = teclado.nextLine();
+
+        Usuario user1 = new Usuario(nombre,contraseña);
+
+
+
+
+
+AutenticarUsuario verificador = new AutenticarUsuario();
+Validacion valida = new Validacion();
+
+
+
+    if(verificador.autenticar(user1)){
+        valida.permitirAcceso(user1);
+    }else{
+        valida.restringir();
+    }
 
 
 
